@@ -1,20 +1,26 @@
+/*
+ * Simple Quiz Styling
+ * Ensures the layout is centered and easy to read.
+ */
 body {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Added for visual confirmation */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
     padding: 20px;
 }
 
 #quiz-container {
     max-width: 600px;
-    margin: auto;
+    width: 100%;
+    background-color: #fff;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-#quiz-question {
-    font-size: 20px;
-    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 input[type="radio"] {
