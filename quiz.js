@@ -1,39 +1,36 @@
 /**
- * Simple Quiz Logic Script
- * Handles checking the user's selected answer against the correct answer.
+ * Function to check the user's selected answer against the correct answer.
  */
-
 function checkAnswer() {
-    // 1. Define the correct answer for the current question
-    const correctAnswer = "4"; 
+    // 1. Identify the Correct Answer:
+    const correctAnswer = "4";
 
-    // 2. Select the currently checked radio button within the 'quiz' group
+    // 2. Retrieve the User’s Answer:
     const selectedOption = document.querySelector('input[name="quiz"]:checked');
-    const feedbackElement = document.getElementById("feedback");
+    // Note: If no option is selected, selectedOption will be null.
+    const userAnswer = selectedOption ? selectedOption.value : null;
 
-    // Reset previous feedback styles
-    feedbackElement.className = '';
-    feedbackElement.textContent = '';
+    // Get the feedback display element
+    const feedback = document.getElementById("feedback");
+    
+    // Clear previous text
+    feedback.textContent = "";
 
-    // --- Input Validation: Check if an option was selected ---
-    if (!selectedOption) {
-        feedbackElement.textContent = "Please select an answer before submitting.";
-        feedbackElement.classList.add('warning'); // Use CSS to style this
-        return; // Stop execution if no answer is selected
+    // Optional: Add basic validation to avoid confusing incorrect message if nothing is selected
+    if (!userAnswer) {
+         feedback.textContent = "Please select an answer.";
+         return;
     }
 
-    // Get the value of the selected answer
-    const userAnswer = selectedOption.value;
-
-    // 3. Compare the user's answer to the correct answer
+    // 3. Compare the User’s Answer with the Correct Answer:
     if (userAnswer === correctAnswer) {
-        feedbackElement.textContent = "Correct! Well done.";
-        feedbackElement.classList.add('correct'); // Use CSS to style success
+        // Correct answer branch
+        feedback.textContent = "Correct! Well done.";
     } else {
-        feedbackElement.textContent = "That's incorrect. Try again!";
-        feedbackElement.classList.add('incorrect'); // Use CSS to style failure
+        // Incorrect answer branch
+        feedback.textContent = "That's incorrect. Try again!";
     }
 }
 
-// Attach the checkAnswer function to the 'click' event of the submit button
+// Add an Event Listener to the Submit Button:
 document.getElementById("submit-answer").addEventListener("click", checkAnswer);
