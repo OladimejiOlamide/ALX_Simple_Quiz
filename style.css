@@ -23,44 +23,61 @@ body {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-input[type="radio"] {
-    margin-right: 10px;
+#quiz-question {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Styling for radio button choices */
+#quiz-container div {
+    margin-bottom: 15px;
 }
 
 label {
-    margin-right: 30px;
-    cursor: pointer;
+    margin-left: 8px;
 }
 
+/* Styling for the submit button */
 #submit-answer {
-    display: block;
-    margin-top: 20px;
-    padding: 10px 20px;
+    padding: 10px 15px;
     background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    margin-top: 10px;
 }
 
 #submit-answer:hover {
     background-color: #0056b3;
 }
 
+/* Styling for feedback message */
 #feedback {
     margin-top: 20px;
-    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
 }
 
-Given the final expected JavaScript output for the Simple Interactive Quiz task, let’s create a set of explicit instructions. These will guide the learners to produce the exact code, ensuring uniform submissions suitable for automated checking.
+/* Styles for feedback classes added by JavaScript */
+.correct {
+    background-color: #d4edda; /* Light green */
+    color: #155724; /* Dark green text */
+    border: 1px solid #c3e6cb;
+}
 
-Your Task:
-Create a JavaScript function named checkAnswer for a quiz application that checks if the user’s selected answer is correct and displays appropriate feedback. You will also add an event listener to the “Submit Answer” button to invoke this function when clicked.
+.incorrect {
+    background-color: #f8d7da; /* Light red */
+    color: #721c24; /* Dark red text */
+    border: 1px solid #f5c6cb;
+}
 
-Detailed Instructions:
-Start with the Function Declaration:
-Define a function named checkAnswer. This function will be called when the user submits their answer.
-function checkAnswer() {
-    // Function body
+.warning {
+    background-color: #fff3cd; /* Light yellow */
+    color: #856404; /* Dark yellow text */
+    border: 1px solid #ffeeba;
 }
